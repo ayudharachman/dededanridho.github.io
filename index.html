@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Undangan Pernikahan Dede & Ridho</title>
 
-  <meta property="og:title" content="Undangan Pernikahan Dede & Ridho - Sabtu, dd mm yyyy">
-  <meta property="og:description" content="Undangan Pernikahan Dede & Ridho - Sabtu, dd mm yyyy di xxx">
+  <meta property="og:title" content="Undangan Pernikahan Dede & Ridho">
+  <meta property="og:description" content="Undangan Pernikahan Dede & Ridho - Akad: Sabtu, 07 Juni 2023, Resepsi: 10 Juni 2023">
   <meta property="og:locale" content="id_ID"/>
   <meta property="og:image" content="">
   <meta property="og:url" content="">
@@ -145,52 +145,57 @@
           <h1 class="subtitle">Undangan Pernikahan</h1>
           <h1 class="title">Dede & Ridho</h1>
           <h5 class="subtitle tempatwaktu">
-            Sabtu, dd mm yyyy
+            Akad, 07 Juni 2023
             </br>
-            xxx
+            Resepsi, 10 Juni 2023
             </br>
-            xxx
           </h5>
           <div data-video="5pZQp22OxvU" data-autoplay="0" data-loop="1" id="youtube-audio1"></div>
         </div>
         <!-- Start Countdown -->
         <div>
           <ul id="hitungmundur">
-            <li><span class="days">00</span>
+            <li><span class="days" id="days">00</span>
               <p class="days_text">Hari</p>
             </li>
             <li class="separator">:</li>
-            <li><span class="hours">00</span>
+            <li><span class="hours" id="hours">00</span>
               <p class="hours_text">Jam</p>
             </li>
             <li class="separator">:</li>
-            <li><span class="minutes">00</span>
+            <li><span class="minutes" id="minutes">00</span>
               <p class="minutes_text">Menit</p>
             </li>
             <li class="separator">:</li>
-            <li><span class="seconds">00</span>
+            <li><span class="seconds" id="seconds">00</span>
               <p class="seconds_text">Detik</p>
             </li>
           </ul>
           <div class="spasi">
           </div>
           <script type="text/javascript">
-            var now = new Date();
-            var day = now.getDate();
-            var month = now.getMonth() + 1;
-            var year = now.getFullYear() + 1;
+            var countDownDate = new Date("june 07, 2023 09:00:20").getTime();
+            var x = setInterval(function() {
+              var now = new Date().getTime();                
+              var distance = countDownDate - now;                
+              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+              document.getElementById("days").innerHTML = days;
+              document.getElementById("hours").innerHTML = hours;
+              document.getElementById("minutes").innerHTML = minutes;
+              document.getElementById("seconds").innerHTML = seconds;           
 
-            var nextyear = month + '/' + day + '/' + year + ' 07:07:07';
-            var harih = '03/21/2020 17:00:00';
-
-            $('#hitungmundur').countdown({
-              date: harih, // TODO Date format: 07/27/2017 17:00:00
-              offset: +7, // TODO Your Timezone Offset
-              day: 'Hari',
-              days: 'Hari'
-            }, function () {
-              console.log('ok');
-            });
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = '-';
+                document.getElementById("hours").innerHTML = '-';
+                document.getElementById("minutes").innerHTML = '-';
+                document.getElementById("seconds").innerHTML = '-';   
+              }
+            }, 1000);
           </script>
         </div>
         <!-- End Countdown -->
@@ -253,10 +258,14 @@
       <div data-aos="fade-up" data-aos-easing="linear">
         <div class="nama-lengkap">
           Dede Andriyani
+          <br>
+          <span style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 14px; color: black;">Putri Ke empat dari Bapak Ramdani & Ibu Fatimah</span>
         </div>
         <div class="ampersand">&</div>
         <div class="nama-lengkap">
           Ridho Ayudha Rachman
+          <br>
+          <span style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 14px; color: black;">Putra Pertama dari Bapak Parman & Ibu Ona Killian</span>
         </div>
       </div>
       <span class="space40px"></span>
@@ -278,39 +287,37 @@
     <!-- Begin Waktu Section -->
     <section class="section-dark" id="Waktu">
       <div class="container">
-
         <div class="column is-12 regular-section" data-aos="fade-up" data-aos-easing="linear">
           <h1 class="title has-text-centered section-title">Waktu</h1>
         </div>
         <div class="columns is-multiline" data-aos="fade-up" data-aos-easing="linear">
           <div class="column is-4 has-vertically-aligned-content">
-
-            <p class="is-larger has-text-centered">
+            <!-- <p class="is-larger has-text-centered">
               <div class="waktu tanggal-hari has-text-centered">Sabtu</div>
               <div class="waktu tanggal-angka has-text-centered">dd</div>
               <div class="waktu tanggal-bulan has-text-centered">mm yyyy</div>
-            </p>
-
-          </div>
-          <div class="column is-4 has-vertically-aligned-content">
-
+            </p> -->
             <p class="waktu is-larger has-text-centered">
-              Akad Nikah:
+              &nbsp;
+            </p>
+          </div>
+
+          <div class="column is-4 has-vertically-aligned-content">
+            <p class="waktu is-larger has-text-centered">
+              Akad Nikah 07 Juni 2023:
+              <br>
+              <strong>00.00 WIB</strong>
+              <br>
+              Resepsi 10 Juni 2023:
               <br>
               <strong>00.00 WIB</strong>
             </p>
-
           </div>
 
           <div class="column is-4 has-vertically-aligned-content">
-
             <h1 class="waktu is-larger has-text-centered">
-              Resepsi:
-              <br>
-              <strong>00.00 - 00.00 WIB</strong>
+              &nbsp;
             </h1>
-
-
           </div>
 
         </div>
@@ -459,7 +466,7 @@
               <br>
               Jika bisa hadir kami tunggu konfirmasinya,
               <br>
-              Informasi: Di meja penerima tamu akan kami sediakan hand sanitizer dan pemeriksaan suhu tubuh.
+              Informasi: Di meja penerima tamu akan kami sediakan hand sanitizer
               <br>
               <br>
               Jika tidak memungkinkan untuk hadir di pernikahan kami, tidak mengapa,
@@ -469,13 +476,13 @@
               <br>
               Stay safe & jaga kesehatan ya :)
             </p>
-            <a href="https://api.whatsapp.com/send?phone=6282112837503&text=Halo%20Dede,%20saya%20akan%20datang%20di%20acara%20pernikahan%20kamu%20:)&source=&data="
+            <a href="https://api.whatsapp.com/send?phone=6282112837503&text=Halo%20Dede,%20saya%20akan%20datang%20di%20acara%20pernikahan%20kamu%20dan%20Ridho%20:)&source=&data="
               class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
               <i class="fab fa-whatsapp"></i>
               &nbsp;&nbsp;Kabari Dede
             </a>
 
-            <a href="https://api.whatsapp.com/send?phone=6281290865039&text=Halo%20Ridho,%20saya%20akan%20datang%20di%20acara%20pernikahan%20kamu%20:)&source=&data="
+            <a href="https://api.whatsapp.com/send?phone=6281290865039&text=Halo%20Ridho,%20saya%20akan%20datang%20di%20acara%20pernikahan%20kamu%20dan%20Dede%20:)&source=&data="
               class="button btn-whatsapp" target="_blank" data-aos="zoom-in">
               <i class="fab fa-whatsapp"></i>
               &nbsp;&nbsp; Kabari Ridho
@@ -487,6 +494,24 @@
               <img src="image/divider-leaves.png" class="divider has-text-centered" alt="~~~">
             </div>
             <div class="space40px"></div>
+
+            <div class="kirim-kado">Kirim Kado</div>
+            <p class="h2 subtitle">
+              Terima kasih atas doa dan restu yang telah Anda berikan, jika ingin<br>
+              memberikan kado nikah, silakan kirim dengan cara di bawah ini.<br>
+              Sebelumnya, kami ucapkan banyak terima kasih :)
+            </p>
+            <br>
+            <p class="h2 subtitle">
+              Untuk mengirimkan kado nikah kepada kami, silakan kirimkan melalui <strong>Dana</strong>.<br>
+              Atau melalui Nomor Rekening <strong>Bank Mandiri 1290012371965</strong>
+            </p>
+            <div class="space40px"></div>
+            <div data-aos="fade-up" data-aos-easing="linear">
+              <img src="image/divider-leaves.png" class="divider has-text-centered" alt="~~~">
+            </div>
+            <div class="space40px"></div>
+
             <p class="h2 subtitle" data-aos="fade-up" data-aos-easing="linear">
               Kami yang berbahagia,
               <br>
